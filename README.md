@@ -1,2 +1,2 @@
-# RESTful-eCom-Spring
+# RESTful eCommerce Application implement in Spring
 RestFul API in Spring
