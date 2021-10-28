@@ -1,0 +1,177 @@
+2021-10-28 06:13:38.585      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14368 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-28 06:13:38.604      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14368 --- [           main] com.modern.api.eCommerceApp              : Starting eCommerceApp on DESKTOP-HLTRTU1 with PID 14368 (C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring\build\classes\java\main started by duyng in C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring)
+2021-10-28 06:13:38.604      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14368 --- [           main] com.modern.api.eCommerceApp              : No active profile set, falling back to default profiles: default
+2021-10-28 06:13:39.183      WARN [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14368 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hypermediaRepresentionModelProcessorConfigurator' defined in class path resource [org/springframework/hateoas/config/WebMvcHateoasConfiguration.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: com.modern.api.exception [Xlint:invalidAbsoluteTypeName]
+2021-10-28 06:13:39.198      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14368 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-28 06:13:39.198     ERROR [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14368 --- [           main] o.s.boot.SpringApplication               : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hypermediaRepresentionModelProcessorConfigurator' defined in class path resource [org/springframework/hateoas/config/WebMvcHateoasConfiguration.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: com.modern.api.exception [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:241)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:723)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:536)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.modern.api.eCommerceApp.main(eCommerceApp.java:10)
+Caused by: java.lang.IllegalArgumentException: warning no match for this type name: com.modern.api.exception [Xlint:invalidAbsoluteTypeName]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:319)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:289)
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:321)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:347)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:299)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:430)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 16 common frames omitted
+2021-10-28 06:14:09.775      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 17968 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-28 06:14:09.791      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 17968 --- [           main] com.modern.api.eCommerceApp              : Starting eCommerceApp on DESKTOP-HLTRTU1 with PID 17968 (C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring\build\classes\java\main started by duyng in C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring)
+2021-10-28 06:14:09.791      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 17968 --- [           main] com.modern.api.eCommerceApp              : No active profile set, falling back to default profiles: default
+2021-10-28 06:14:10.397      WARN [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 17968 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hypermediaRepresentionModelProcessorConfigurator' defined in class path resource [org/springframework/hateoas/config/WebMvcHateoasConfiguration.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: com.modern.api.exception [Xlint:invalidAbsoluteTypeName]
+2021-10-28 06:14:10.397      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 17968 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-28 06:14:10.412     ERROR [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 17968 --- [           main] o.s.boot.SpringApplication               : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hypermediaRepresentionModelProcessorConfigurator' defined in class path resource [org/springframework/hateoas/config/WebMvcHateoasConfiguration.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: com.modern.api.exception [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:241)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:723)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:536)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.modern.api.eCommerceApp.main(eCommerceApp.java:10)
+Caused by: java.lang.IllegalArgumentException: warning no match for this type name: com.modern.api.exception [Xlint:invalidAbsoluteTypeName]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:319)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:289)
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:321)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:347)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:299)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:430)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 16 common frames omitted
+2021-10-28 06:15:23.666      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-28 06:15:23.687      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] com.modern.api.eCommerceApp              : Starting eCommerceApp on DESKTOP-HLTRTU1 with PID 18784 (C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring\build\classes\java\main started by duyng in C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring)
+2021-10-28 06:15:23.687      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] com.modern.api.eCommerceApp              : No active profile set, falling back to default profiles: default
+2021-10-28 06:15:24.374      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-28 06:15:24.389      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-28 06:15:24.389      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-28 06:15:24.389      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-28 06:15:24.436      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-28 06:15:24.436      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 714 ms
+2021-10-28 06:15:24.621      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-28 06:15:24.690      WARN [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception; nested exception is java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [class org.springframework.web.HttpMediaTypeNotSupportedException]: {public org.springframework.http.ResponseEntity com.modern.api.exception.ApiExceptionAdvisor.handleMediaNotSupport(javax.servlet.http.HttpServletRequest,java.lang.Exception,java.util.Locale), public final org.springframework.http.ResponseEntity org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler.handleException(java.lang.Exception,org.springframework.web.context.request.WebRequest) throws java.lang.Exception}
+2021-10-28 06:15:24.690      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-28 06:15:24.690      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-28 06:15:24.705      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-28 06:15:24.705     ERROR [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 18784 --- [           main] o.s.boot.SpringApplication               : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception; nested exception is java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [class org.springframework.web.HttpMediaTypeNotSupportedException]: {public org.springframework.http.ResponseEntity com.modern.api.exception.ApiExceptionAdvisor.handleMediaNotSupport(javax.servlet.http.HttpServletRequest,java.lang.Exception,java.util.Locale), public final org.springframework.http.ResponseEntity org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler.handleException(java.lang.Exception,org.springframework.web.context.request.WebRequest) throws java.lang.Exception}
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.modern.api.eCommerceApp.main(eCommerceApp.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception; nested exception is java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [class org.springframework.web.HttpMediaTypeNotSupportedException]: {public org.springframework.http.ResponseEntity com.modern.api.exception.ApiExceptionAdvisor.handleMediaNotSupport(javax.servlet.http.HttpServletRequest,java.lang.Exception,java.util.Locale), public final org.springframework.http.ResponseEntity org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler.handleException(java.lang.Exception,org.springframework.web.context.request.WebRequest) throws java.lang.Exception}
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 20 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [class org.springframework.web.HttpMediaTypeNotSupportedException]: {public org.springframework.http.ResponseEntity com.modern.api.exception.ApiExceptionAdvisor.handleMediaNotSupport(javax.servlet.http.HttpServletRequest,java.lang.Exception,java.util.Locale), public final org.springframework.http.ResponseEntity org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler.handleException(java.lang.Exception,org.springframework.web.context.request.WebRequest) throws java.lang.Exception}
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:101)
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:65)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:281)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:258)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1007)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:949)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 21 common frames omitted
+2021-10-28 06:18:21.320      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-28 06:18:21.335      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] com.modern.api.eCommerceApp              : Starting eCommerceApp on DESKTOP-HLTRTU1 with PID 14756 (C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring\build\classes\java\main started by duyng in C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring)
+2021-10-28 06:18:21.335      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] com.modern.api.eCommerceApp              : No active profile set, falling back to default profiles: default
+2021-10-28 06:18:22.044      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-28 06:18:22.060      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-28 06:18:22.060      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-28 06:18:22.060      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-28 06:18:22.113      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-28 06:18:22.113      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 752 ms
+2021-10-28 06:18:22.261      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-28 06:18:22.393      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8080"]
+2021-10-28 06:18:22.414      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-10-28 06:18:22.414      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [           main] com.modern.api.eCommerceApp              : Started eCommerceApp in 1.345 seconds (JVM running for 1.745)
+2021-10-28 06:22:10.913      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-28 06:22:10.913      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-28 06:22:10.929      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2021-10-28 06:22:49.367      WARN [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [nio-8080-exec-3] com.modern.api.aspect.LoggingAspect      : Handle Logging <500 INTERNAL_SERVER_ERROR Internal Server Error,com.modern.api.exception.Error@158e9a17,[]>
+2021-10-28 06:27:13.822      WARN [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 14756 --- [nio-8080-exec-9] com.modern.api.aspect.LoggingAspect      : Handle Logging <500 INTERNAL_SERVER_ERROR Internal Server Error,com.modern.api.exception.Error@3d689402,[]>
+2021-10-28 06:28:46.534      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [kground-preinit] o.h.validator.internal.util.Version      : HV000001: Hibernate Validator 6.1.6.Final
+2021-10-28 06:28:46.546      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] com.modern.api.eCommerceApp              : Starting eCommerceApp on DESKTOP-HLTRTU1 with PID 4288 (C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring\build\classes\java\main started by duyng in C:\_Work\Study\JavaEE\Spring\Code\UdemySpringRestful\RESTful-eCom-Spring)
+2021-10-28 06:28:46.546      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] com.modern.api.eCommerceApp              : No active profile set, falling back to default profiles: default
+2021-10-28 06:28:47.255      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-28 06:28:47.255      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8080"]
+2021-10-28 06:28:47.255      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-28 06:28:47.255      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-28 06:28:47.318      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-28 06:28:47.318      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 733 ms
+2021-10-28 06:28:47.471      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-28 06:28:47.572      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8080"]
+2021-10-28 06:28:47.603      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-10-28 06:28:47.603      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [           main] com.modern.api.eCommerceApp              : Started eCommerceApp in 1.31 seconds (JVM running for 1.689)
+2021-10-28 06:28:59.761      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-28 06:28:59.761      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-28 06:28:59.765      INFO [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-10-28 06:28:59.823      WARN [restful-eCom-Spring,,,]     [null] [null] [null]     [null] 4288 --- [nio-8080-exec-3] com.modern.api.aspect.LoggingAspect      : Handle Logging <500 INTERNAL_SERVER_ERROR Internal Server Error,com.modern.api.exception.Error@77ae39b8,[]>
