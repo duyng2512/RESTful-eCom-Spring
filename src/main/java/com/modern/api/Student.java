@@ -1,21 +1,12 @@
-package com.modern.api.entity;
+package com.modern.api;
 
-import com.modern.api.entity.base.BaseEntity;
-import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.UUID;
 
-
 @Entity
-@Table(name = "address")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class AddressEntity {
+@Table(name = "student")
+public class Student {
 
     @Id
     @GeneratedValue
@@ -42,8 +33,4 @@ public class AddressEntity {
 
     @Column(name = "ZIP_CODE")
     private String zipCode;
-
-    @OneToMany(mappedBy = "addressEntity", fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<OrderEntity> orders;
-
 }

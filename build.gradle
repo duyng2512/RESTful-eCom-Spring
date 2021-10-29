@@ -1,17 +1,23 @@
 plugins {
-    id 'org.springframework.boot' version '2.3.5.RELEASE'
+    id 'org.springframework.boot' version '2.4.0'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
     id 'org.hidetake.swagger.generator' version '2.18.2'
 }
 
-group = 'com.opw.modern.api'
+group = 'com.packt.modern.api'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.14'
+sourceCompatibility = JavaVersion.VERSION_15
+/*compileJava {
+    options.compilerArgs += ["--enable-preview"]
+}
+compileTestJava {
+    options.compilerArgs += ["--enable-preview"]
+}*/
 
 swaggerSources {
-    def typeMappings = 'URI=URI'
-    def importMappings = 'URI=java.net.URI'
+    def typeMappings = 'URI=URI, BigDecimal=BigDecimal, EntityModel=EntityModel'
+    def importMappings = 'URI=java.net.URI, BigDecimal=java.math.BigDecimal, EntityModel=org.springframework.hateoas.EntityModel'
     eStore {
         def apiYaml = "${rootDir}/src/main/resources/api/openapi.yaml"
         def configJson = "${rootDir}/src/main/resources/api/config.json"
@@ -23,6 +29,7 @@ swaggerSources {
             rawOptions = ['--ignore-file-override', ignoreFile, '--type-mappings',
                           typeMappings, '--import-mappings', importMappings] as List<String>
             components = [models: true, apis: true, supportingFiles: 'ApiUtil.java']
+            //templateDir = file("${rootDir}/src/main/resources/templates")
             //dependsOn validation // Should be uncommented once plugin starts supporting OA 3 validation
         }
     }
@@ -39,6 +46,7 @@ repositories {
 dependencies {
     // OpenAPI Starts
     swaggerCodegen 'org.openapitools:openapi-generator-cli:4.3.1'
+    //compile 'io.swagger.core.v3:swagger-annotations:2.1.5'
     compileOnly 'io.swagger:swagger-annotations:1.6.2'
     compileOnly 'org.springframework.boot:spring-boot-starter-validation'
     compileOnly 'org.openapitools:jackson-databind-nullable:0.2.1'
@@ -46,31 +54,22 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
     // OpenAPI Ends
 
-    // Utils Start
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
-    annotationProcessor 'org.projectlombok:lombok:1.18.12'
-    // Utils End
-
-    // Aspect
-    runtimeOnly 'org.aspectj:aspectjrt:1.9.7'
-    implementation group: 'org.aspectj', name: 'aspectjtools', version: '1.9.7'
-    // Aspect
-
-    /* Spring */
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    /* End Spring */
-
-    /* Database Start */
+    // DB Starts
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'mysql:mysql-connector-java:8.0.27'
-    /* Database End */
+    implementation 'org.flywaydb:flyway-core'
+    runtimeOnly 'com.h2database:h2'
+    // DB Ends
 
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
+    testImplementation('org.springframework.boot:spring-boot-starter-test') /*{
+    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' }*/
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
 
 test {
+    jvmArgs '--enable-preview'
     useJUnitPlatform()
 }
