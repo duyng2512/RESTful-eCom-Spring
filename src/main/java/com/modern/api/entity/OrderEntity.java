@@ -43,4 +43,7 @@ public class OrderEntity extends BaseEntity {
     @JoinColumn(name = "SHIPMENT_ID")
     private ShipmentEntity shipmentEntity;
 
+    @ManyToOne
+    private CardEntity cardEntity;
+
 }

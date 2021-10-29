@@ -15,12 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AddressEntity {
-
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", updatable = false, nullable = false)
-    private UUID id;
+public class AddressEntity extends BaseEntity{
 
     @Column(name = "NUMBER")
     private String number;
