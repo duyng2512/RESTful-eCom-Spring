@@ -3,9 +3,12 @@ package com.modern.api.entity;
 import com.modern.api.entity.base.BaseEntity;
 import com.opw.modern.api.model.Order;
 import com.opw.modern.api.model.User;
+import com.sun.istack.Nullable;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -17,10 +20,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class CardEntity extends BaseEntity {
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", updatable = false, nullable = false)
-    private UUID id;
 
     @Column(name = "NUMBER")
     private String number;
@@ -31,12 +30,12 @@ public class CardEntity extends BaseEntity {
     @Column(name = "CVV")
     private String cvv;
 
-    @ManyToOne
+
+    @OneToOne
     @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
     private UserEntity user;
 
     @OneToMany(mappedBy = "cardEntity", fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set<OrderEntity> orders;
-
+    private List<OrderEntity> orders = Collections.emptyList();
 
 }

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.io.Serializable;
 import javax.validation.Valid;
@@ -35,7 +34,7 @@ public class Item extends RepresentationModel<Item>  implements Serializable {
 
   @JsonProperty("unitPrice")
   @JacksonXmlProperty(localName = "unitPrice")
-  private BigDecimal unitPrice = null;
+  private Double unitPrice;
 
   public Item id(String id) {
     this.id = id;
@@ -77,7 +76,7 @@ public class Item extends RepresentationModel<Item>  implements Serializable {
     this.quantity = quantity;
   }
 
-  public Item unitPrice(BigDecimal unitPrice) {
+  public Item unitPrice(Double unitPrice) {
     this.unitPrice = unitPrice;
     return this;
   }
@@ -88,13 +87,12 @@ public class Item extends RepresentationModel<Item>  implements Serializable {
   */
   @ApiModelProperty(value = "The item's price per unit")
 
-  @Valid
 
-  public BigDecimal getUnitPrice() {
+  public Double getUnitPrice() {
     return unitPrice;
   }
 
-  public void setUnitPrice(BigDecimal unitPrice) {
+  public void setUnitPrice(Double unitPrice) {
     this.unitPrice = unitPrice;
   }
 

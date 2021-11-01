@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -18,7 +19,7 @@ import java.util.Set;
 @Builder
 public class ProductEntity extends BaseEntity {
 
-    @NotNull(message = "Product name is required")
+    @NotNull(message = "Product name is required.")
     @Basic(optional = false)
     @Column(name = "NAME")
     private String name;
@@ -26,20 +27,23 @@ public class ProductEntity extends BaseEntity {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    @Column(name = "PRICE")
+    private BigDecimal price;
+
     @Column(name = "COUNT")
-    private int count;
+    private Integer count;
 
     @Column(name = "IMAGE_URL")
-    private String imageURL;
+    private String imageUrl;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "PRODUCT_TAG",
             joinColumns = @JoinColumn(name = "PRODUCT_ID"),
-            inverseJoinColumns = @JoinColumn(name = "ID"))
-    private Set<TagEntity> tagEntity = Collections.emptySet();
+            inverseJoinColumns = @JoinColumn(name = "TAG_ID"))
+    private List<TagEntity> tagEntity = Collections.emptyList();
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-    private Set<ItemEntity> items = Collections.emptySet();
+    private List<ItemEntity> items = Collections.emptyList();
 
 
 

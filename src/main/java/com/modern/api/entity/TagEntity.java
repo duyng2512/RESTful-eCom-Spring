@@ -8,7 +8,7 @@ import org.hibernate.mapping.Join;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Table(name = "tab")
+@Table(name = "tag")
 @Entity
 @Getter
 @Setter
@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 @Builder
 public class TagEntity extends BaseEntity {
 
-    @NotNull
+    @NotNull(message = "Product name is required.")
     @Basic(optional = false)
     @Column(name = "NAME")
     private String name;

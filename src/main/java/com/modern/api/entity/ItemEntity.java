@@ -5,7 +5,9 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 @Table(name = "item")
 @Entity
@@ -27,9 +29,9 @@ public class ItemEntity extends BaseEntity {
     private ProductEntity product;
 
     @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
-    private Set<CartEntity> cart;
+    private List<CartEntity> cart;
 
     @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
-    private Set<OrderEntity> orders;
+    private List<OrderEntity> orders;
 
 }

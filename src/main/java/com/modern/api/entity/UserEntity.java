@@ -48,13 +48,13 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID"))
     private List<AddressEntity> addresses = Collections.emptyList();
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
-    private List<CardEntity> cards;
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
+    private CardEntity cards;
 
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
     private CartEntity cart;
 
     @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set<OrderEntity> orders;
+    private List<OrderEntity> orders;
 
 }
