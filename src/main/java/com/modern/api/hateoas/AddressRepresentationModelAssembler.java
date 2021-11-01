@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.util.BeanUtil;
 import com.modern.api.controller.AddressController;
 import com.modern.api.entity.AddressEntity;
 import com.opw.modern.api.model.Address;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
@@ -32,14 +33,13 @@ public class AddressRepresentationModelAssembler extends
     @Override
     public Address toModel(AddressEntity entity) {
         /* Initialize Model */
-        Address resource = createModelWithId(entity.getId(), entity);
+        Address resource = instantiateModel(entity);
         BeanUtils.copyProperties(entity, resource);
         resource.setId(entity.getId().toString());
 
         resource.add(linkTo(methodOn(AddressController.class)
                 .getAddressesById(entity.getId().toString()))
                 .withSelfRel());
-
         return resource;
     }
 

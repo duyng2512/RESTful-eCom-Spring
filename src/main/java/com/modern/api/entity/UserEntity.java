@@ -48,7 +48,7 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID"))
     private List<AddressEntity> addresses = Collections.emptyList();
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<CardEntity> cards;
 
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)

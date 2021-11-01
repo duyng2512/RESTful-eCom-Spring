@@ -27,7 +27,7 @@ public class CardRepresentationModelAssembler extends RepresentationModelAssembl
         String userId = Objects.nonNull(entity.getUser()) ? entity.getUser().getId().toString() : null;
         String entityId = entity.getId().toString();
 
-        Card resource = createModelWithId(userId, entity);
+        Card resource = instantiateModel(entity);
         BeanUtils.copyProperties(entity, resource);
 
         resource.setId(entityId);

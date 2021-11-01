@@ -3,6 +3,7 @@ package com.modern.api.entity;
 import com.modern.api.entity.base.BaseEntity;
 import com.opw.modern.api.model.Order;
 import com.opw.modern.api.model.User;
+import com.sun.istack.Nullable;
 import lombok.*;
 
 import javax.persistence.*;
