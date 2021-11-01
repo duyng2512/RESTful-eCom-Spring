@@ -46,7 +46,7 @@ public class CartRepresentationModelAssembler extends
         resource.add(linkTo(methodOn(CartsController.class)
                             .getCartItemsByCustomerId(customerId))
                             .withRel("cart-items"));
-        return null;
+        return resource;
     }
 
     public List<Cart> toListModel(Iterable<CartEntity> cartEntities){

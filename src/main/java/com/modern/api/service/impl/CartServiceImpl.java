@@ -11,6 +11,7 @@ import com.modern.api.repository.UserRepository;
 import com.modern.api.service.inf.CartService;
 import com.modern.api.service.inf.ItemService;
 import com.opw.modern.api.model.Item;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 import static org.springframework.objenesis.instantiator.util.UnsafeUtils.getUnsafe;
 
 @Service
+@Slf4j(topic = "CartServiceImpl")
 public class CartServiceImpl implements CartService {
 
     private final CartRepository cartRepository;
@@ -90,8 +92,11 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartEntity getCartByCustomerId(String customerId) {
+        log.debug("START getCartByCustomerId {}", customerId);
         CartEntity cartEntity = cartRepository.findByCustomerId(UUID.fromString(customerId))
-                                              .orElse(new CartEntity());;
+                                              .orElse(new CartEntity());
+
+        log.debug("getCartByCustomerId Entity {}", cartEntity.toString());
         if (Objects.isNull(cartEntity.getUser())){
             Optional<UserEntity> userEntity = userRepository.findById(UUID.fromString(customerId));
 
@@ -112,14 +117,16 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Item getCartItemsByItemId(String customerId, String itemId) {
+        log.debug("START getCartItemsByItemId Customer ID {} | Item id {}", customerId, itemId);
         CartEntity cartEntity = getCartByCustomerId(customerId);
+        log.debug("getCartItemsByItemId Entity {}", cartEntity.toString());
         AtomicReference<ItemEntity> itemEntity = new AtomicReference<>();
         cartEntity.getItems().forEach(item -> {
-            if (item.getId().equals(UUID.fromString(itemId))) itemEntity.set(item);
+            if (item.getProduct().getId().equals(UUID.fromString(itemId))) itemEntity.set(item);
         });
+        log.debug("getCartItemsByItemId itemEntity {}", itemEntity.toString());
         if (Objects.isNull(itemEntity.get()))
             getUnsafe().throwException(new ItemNotFoundException(String.format(" - %s", itemId)));
-
         return itemService.toModel(itemEntity.get());
     }
 }

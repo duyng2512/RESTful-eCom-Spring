@@ -26,11 +26,11 @@ public class OrderEntity extends BaseEntity {
     private Order.StatusEnum status;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "ADDRESS_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "ADDRESS_ID", referencedColumnName = "ID", insertable=false, updatable=false)
     private AddressEntity addressEntity;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
+    @JoinColumn(name="CUSTOMER_ID", nullable = false)
     private UserEntity userEntity;
 
     @OneToOne(mappedBy = "orderEntity")

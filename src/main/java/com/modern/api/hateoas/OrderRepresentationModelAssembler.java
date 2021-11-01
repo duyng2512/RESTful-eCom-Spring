@@ -60,6 +60,7 @@ public class OrderRepresentationModelAssembler extends
                 .items(itemService.toModelList(entity.getItems()))
                 .shipment(shipmentAssembler.toModel(entity.getShipmentEntity()))
                 .date(entity.getOrderDate().toInstant().atOffset(ZoneOffset.UTC));
+
         log.debug("Assembled Model {}", resource);
         resource.add(linkTo(methodOn(OrderController.class)
                             .getByOrderId(orderId))

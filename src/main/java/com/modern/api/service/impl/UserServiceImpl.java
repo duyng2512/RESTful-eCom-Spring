@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         if (!cardExist){
             return Optional.empty();
         }
-        return Optional.of(repository.findById(UUID.fromString(id)).map(UserEntity::getCards).get().get(0));
+        return Optional.of(repository.findById(UUID.fromString(id)).map(UserEntity::getCards).get());
     }
 
     @Override

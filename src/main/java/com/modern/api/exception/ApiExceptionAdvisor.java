@@ -5,6 +5,7 @@ import com.modern.api.exception.common.CustomerNotFoundException;
 import com.modern.api.exception.common.GenericAlreadyExistsException;
 import com.modern.api.exception.common.ItemNotFoundException;
 import com.modern.api.exception.common.ResourceNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.net.http.HttpRequest;
 import java.util.Locale;
 
+@Slf4j
 @ControllerAdvice
 public class ApiExceptionAdvisor {
 

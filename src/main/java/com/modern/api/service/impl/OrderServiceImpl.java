@@ -5,6 +5,7 @@ import com.modern.api.exception.common.ResourceNotFoundException;
 import com.modern.api.repository.OrderRepository;
 import com.modern.api.service.inf.OrderService;
 import com.opw.modern.api.model.NewOrder;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@Slf4j(topic = "OrderServiceImpl")
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
@@ -39,7 +41,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Iterable<OrderEntity> getOrdersByCustomerId(@NotNull @Valid String customerId) {
-        return orderRepository.findByCustomerId(UUID.fromString(customerId));
+        Iterable<OrderEntity> orderEntityIterable = orderRepository.findByCustomerId(UUID.fromString(customerId));
+        log.debug("getOrdersByCustomerId {}", orderEntityIterable.toString());
+        return orderEntityIterable;
     }
 
     @Override

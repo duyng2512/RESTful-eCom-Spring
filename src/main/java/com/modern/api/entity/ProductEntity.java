@@ -36,10 +36,10 @@ public class ProductEntity extends BaseEntity {
     @Column(name = "IMAGE_URL")
     private String imageUrl;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "PRODUCT_TAG",
             joinColumns = @JoinColumn(name = "PRODUCT_ID"),
-            inverseJoinColumns = @JoinColumn(name = "ID"))
+            inverseJoinColumns = @JoinColumn(name = "TAG_ID"))
     private List<TagEntity> tagEntity = Collections.emptyList();
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
