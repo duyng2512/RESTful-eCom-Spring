@@ -44,6 +44,9 @@ repositories {
 }
 
 dependencies {
+    implementation 'junit:junit:4.12'
+    implementation 'junit:junit:4.12'
+
     // OpenAPI Starts
     swaggerCodegen 'org.openapitools:openapi-generator-cli:4.3.1'
     //compile 'io.swagger.core.v3:swagger-annotations:2.1.5'
@@ -62,8 +65,8 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    testImplementation('org.springframework.boot:spring-boot-starter-test') /*{
-    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' }*/
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    /*{exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' }*/
 
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'

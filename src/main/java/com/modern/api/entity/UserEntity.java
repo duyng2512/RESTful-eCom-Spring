@@ -55,6 +55,6 @@ public class UserEntity extends BaseEntity {
     private CartEntity cart;
 
     @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set<OrderEntity> orders;
+    private List<OrderEntity> orders;
 
 }

@@ -53,12 +53,12 @@ public interface ProductApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"price\" : \"\", \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"count\" : 0, \"description\" : \"description\", \"id\" : \"id\", \"tag\" : [ { \"name\" : \"name\", \"id\" : \"id\" }, { \"name\" : \"name\", \"id\" : \"id\" } ] }";
+                    String exampleString = "{ \"price\" : 0.8008282, \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"count\" : 6, \"description\" : \"description\", \"id\" : \"id\", \"tag\" : [ { \"name\" : \"name\", \"id\" : \"id\" }, { \"name\" : \"name\", \"id\" : \"id\" } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/xml"))) {
-                    String exampleString = "<null> <id>aeiou</id> <name>aeiou</name> <description>aeiou</description> <imageUrl>aeiou</imageUrl> <price>UNDEFINED_EXAMPLE_VALUE</price> <count>123</count> </null>";
+                    String exampleString = "<null> <id>aeiou</id> <name>aeiou</name> <description>aeiou</description> <imageUrl>aeiou</imageUrl> <price>1.3579</price> <count>123</count> </null>";
                     ApiUtil.setExampleResponse(request, "application/xml", exampleString);
                     break;
                 }
@@ -89,12 +89,12 @@ public interface ProductApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"price\" : \"\", \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"count\" : 0, \"description\" : \"description\", \"id\" : \"id\", \"tag\" : [ { \"name\" : \"name\", \"id\" : \"id\" }, { \"name\" : \"name\", \"id\" : \"id\" } ] }";
+                    String exampleString = "{ \"price\" : 0.8008282, \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"count\" : 6, \"description\" : \"description\", \"id\" : \"id\", \"tag\" : [ { \"name\" : \"name\", \"id\" : \"id\" }, { \"name\" : \"name\", \"id\" : \"id\" } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/xml"))) {
-                    String exampleString = "<null> <id>aeiou</id> <name>aeiou</name> <description>aeiou</description> <imageUrl>aeiou</imageUrl> <price>UNDEFINED_EXAMPLE_VALUE</price> <count>123</count> </null>";
+                    String exampleString = "<null> <id>aeiou</id> <name>aeiou</name> <description>aeiou</description> <imageUrl>aeiou</imageUrl> <price>1.3579</price> <count>123</count> </null>";
                     ApiUtil.setExampleResponse(request, "application/xml", exampleString);
                     break;
                 }

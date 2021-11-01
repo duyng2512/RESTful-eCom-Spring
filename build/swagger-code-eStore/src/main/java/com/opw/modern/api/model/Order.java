@@ -63,7 +63,7 @@ public class Order extends RepresentationModel<Order>  implements Serializable {
 
   @JsonProperty("total")
   @JacksonXmlProperty(localName = "total")
-  private BigDecimal total = null;
+  private BigDecimal total;
 
   @JsonProperty("payment")
   @JacksonXmlProperty(localName = "payment")

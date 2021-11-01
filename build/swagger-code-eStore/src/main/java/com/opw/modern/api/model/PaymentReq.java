@@ -8,7 +8,6 @@ import com.opw.modern.api.model.Card;
 import com.opw.modern.api.model.CustomerInfoOnCard;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.io.Serializable;
 import javax.validation.Valid;
@@ -46,7 +45,7 @@ public class PaymentReq extends RepresentationModel<PaymentReq>  implements Seri
 
   @JsonProperty("amount")
   @JacksonXmlProperty(localName = "amount")
-  private BigDecimal amount = null;
+  private Float amount;
 
   public PaymentReq orderId(String orderId) {
     this.orderId = orderId;
@@ -131,7 +130,7 @@ public class PaymentReq extends RepresentationModel<PaymentReq>  implements Seri
     this.card = card;
   }
 
-  public PaymentReq amount(BigDecimal amount) {
+  public PaymentReq amount(Float amount) {
     this.amount = amount;
     return this;
   }
@@ -142,13 +141,12 @@ public class PaymentReq extends RepresentationModel<PaymentReq>  implements Seri
   */
   @ApiModelProperty(value = "Payment amount")
 
-  @Valid
 
-  public BigDecimal getAmount() {
+  public Float getAmount() {
     return amount;
   }
 
-  public void setAmount(BigDecimal amount) {
+  public void setAmount(Float amount) {
     this.amount = amount;
   }
 

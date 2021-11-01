@@ -6,7 +6,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.UUID;
+import java.sql.Timestamp;
+import java.util.*;
 
 @Entity
 @Table(name = "orders")
@@ -29,21 +30,33 @@ public class OrderEntity extends BaseEntity {
     private AddressEntity addressEntity;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "ID")
     private UserEntity userEntity;
 
     @OneToOne(mappedBy = "orderEntity")
     private AuthorizationEntity authorizationEntity;
 
-    @OneToOne
-    @JoinColumn(name = "PAYMENT_ID")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PAYMENT_ID", referencedColumnName = "ID")
     private PaymentEntity paymentEntity;
 
     @OneToOne
-    @JoinColumn(name = "SHIPMENT_ID")
+    @JoinColumn(name = "SHIPMENT_ID", referencedColumnName = "ID")
     private ShipmentEntity shipmentEntity;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "CARD_ID", referencedColumnName = "ID")
     private CardEntity cardEntity;
+
+    @Column(name = "ORDER_DATE")
+    private Timestamp orderDate;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "ORDER_ITEM",
+            joinColumns = @JoinColumn(name = "ORDER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
+    )
+    private List<ItemEntity> items = Collections.emptyList();
 
 }

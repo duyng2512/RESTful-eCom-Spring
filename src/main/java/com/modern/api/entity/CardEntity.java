@@ -6,6 +6,8 @@ import com.opw.modern.api.model.User;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -36,7 +38,6 @@ public class CardEntity extends BaseEntity {
     private UserEntity user;
 
     @OneToMany(mappedBy = "cardEntity", fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set<OrderEntity> orders;
-
+    private List<OrderEntity> orders = Collections.emptyList();
 
 }

@@ -1,6 +1,10 @@
 package com.modern.api.exception;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.modern.api.exception.common.CustomerNotFoundException;
+import com.modern.api.exception.common.GenericAlreadyExistsException;
+import com.modern.api.exception.common.ItemNotFoundException;
+import com.modern.api.exception.common.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
@@ -9,6 +13,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -105,6 +110,90 @@ public class ApiExceptionAdvisor {
                            .reqMethod(request.getMethod())
                            .build();
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public ResponseEntity<Error> handleHttpRequestMethodNotSupportedException(HttpServletRequest request,
+                                                                              HttpRequestMethodNotSupportedException ex,
+                                                                              Locale locale) {
+        Error error = Error.builder()
+                           .errorCode(ErrorCode.HTTP_REQUEST_METHOD_NOT_SUPPORTED.getErrCode())
+                           .message(ErrorCode.HTTP_REQUEST_METHOD_NOT_SUPPORTED.getErrMsgKey())
+                           .status(HttpStatus.NOT_IMPLEMENTED.value())
+                           .url(request.getRequestURL().toString())
+                           .reqMethod(request.getMethod())
+                           .build();
+        return new ResponseEntity<>(error, HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Error> handleIllegalArgumentException(HttpServletRequest request,
+                                                                IllegalArgumentException ex,
+                                                                Locale locale) {
+        Error error = Error.builder()
+                           .errorCode(ErrorCode.ILLEGAL_ARGUMENT_EXCEPTION.getErrCode())
+                           .message(String.format("%s %s",ErrorCode.ILLEGAL_ARGUMENT_EXCEPTION.getErrMsgKey(), ex.getMessage()))
+                           .status(HttpStatus.BAD_REQUEST.value())
+                           .url(request.getRequestURL().toString())
+                           .reqMethod(request.getMethod())
+                           .build();
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<Error> handleResourceNotFoundException(HttpServletRequest request,
+                                                                 ResourceNotFoundException ex,
+                                                                Locale locale) {
+        Error error = Error.builder()
+                           .errorCode(ErrorCode.RESOURCE_NOT_FOUND.getErrCode())
+                           .message(String.format("%s %s",ErrorCode.RESOURCE_NOT_FOUND.getErrMsgKey(), ex.getMessage()))
+                           .status(HttpStatus.NOT_FOUND.value())
+                           .url(request.getRequestURL().toString())
+                           .reqMethod(request.getMethod())
+                           .build();
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(CustomerNotFoundException.class)
+    public ResponseEntity<Error> handleCustomerNotFoundException(HttpServletRequest request,
+                                                                 CustomerNotFoundException ex,
+                                                                 Locale locale) {
+        Error error = Error.builder()
+                           .errorCode(ErrorCode.CUSTOMER_NOT_FOUND.getErrCode())
+                           .message(String.format("%s %s",ErrorCode.CUSTOMER_NOT_FOUND.getErrMsgKey(), ex.getMessage()))
+                           .status(HttpStatus.NOT_FOUND.value())
+                           .url(request.getRequestURL().toString())
+                           .reqMethod(request.getMethod())
+                           .build();
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(ItemNotFoundException.class)
+    public ResponseEntity<Error> handleItemNotFoundException(HttpServletRequest request,
+                                                             ItemNotFoundException ex,
+                                                             Locale locale) {
+        Error error = Error.builder()
+                           .errorCode(ErrorCode.ITEM_NOT_FOUND.getErrCode())
+                           .message(String.format("%s %s",ErrorCode.ITEM_NOT_FOUND.getErrMsgKey(), ex.getMessage()))
+                           .status(HttpStatus.NOT_FOUND.value())
+                           .url(request.getRequestURL().toString())
+                           .reqMethod(request.getMethod())
+                           .build();
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(GenericAlreadyExistsException.class)
+    public ResponseEntity<Error> handleGenericAlreadyExistsException(HttpServletRequest request,
+                                                                     GenericAlreadyExistsException ex,
+                                                                     Locale locale) {
+        Error error = Error.builder()
+                           .errorCode(ErrorCode.GENERIC_ALREADY_EXISTS.getErrCode())
+                           .message(String.format("%s %s",ErrorCode.GENERIC_ALREADY_EXISTS.getErrMsgKey(), ex.getMessage()))
+                           .status(HttpStatus.NOT_ACCEPTABLE.value())
+                           .url(request.getRequestURL().toString())
+                           .reqMethod(request.getMethod())
+                           .build();
+        return new ResponseEntity<>(error, HttpStatus.NOT_ACCEPTABLE);
     }
 
 }
