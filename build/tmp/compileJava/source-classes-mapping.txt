@@ -61,8 +61,8 @@ com/modern/api/hateoas/UserRepresentationModelAssembler.java
  com.modern.api.hateoas.UserRepresentationModelAssembler
 com/modern/api/controller/CartsController.java
  com.modern.api.controller.CartsController
-com/modern/api/Student.java
- com.modern.api.Student
+com/modern/api/hateoas/OrderRepresentationModelAssembler.java
+ com.modern.api.hateoas.OrderRepresentationModelAssembler
 com/opw/modern/api/model/Payment.java
  com.opw.modern.api.model.Payment
 com/opw/modern/api/CustomerApi.java
@@ -220,5 +220,5 @@ com/modern/api/hateoas/ShipmentRepresentationModelAssembler.java
  com.modern.api.hateoas.ShipmentRepresentationModelAssembler
 com/modern/api/controller/OrderController.java
  com.modern.api.controller.OrderController
-com/modern/api/hateoas/OrderRepresentationModelAssembler.java
- com.modern.api.hateoas.OrderRepresentationModelAssembler
+com/modern/api/AppConfig.java
+ com.modern.api.AppConfig
