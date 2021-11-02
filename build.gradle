@@ -5,15 +5,9 @@ plugins {
     id 'org.hidetake.swagger.generator' version '2.18.2'
 }
 
-group = 'com.packt.modern.api'
+group = 'com.modern.api'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_15
-/*compileJava {
-    options.compilerArgs += ["--enable-preview"]
-}
-compileTestJava {
-    options.compilerArgs += ["--enable-preview"]
-}*/
 
 swaggerSources {
     def typeMappings = 'URI=URI, BigDecimal=BigDecimal, EntityModel=EntityModel'
@@ -29,7 +23,6 @@ swaggerSources {
             rawOptions = ['--ignore-file-override', ignoreFile, '--type-mappings',
                           typeMappings, '--import-mappings', importMappings] as List<String>
             components = [models: true, apis: true, supportingFiles: 'ApiUtil.java']
-            //templateDir = file("${rootDir}/src/main/resources/templates")
             //dependsOn validation // Should be uncommented once plugin starts supporting OA 3 validation
         }
     }
@@ -44,12 +37,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'junit:junit:4.12'
-    implementation 'junit:junit:4.12'
-
     // OpenAPI Starts
     swaggerCodegen 'org.openapitools:openapi-generator-cli:4.3.1'
-    //compile 'io.swagger.core.v3:swagger-annotations:2.1.5'
     compileOnly 'io.swagger:swagger-annotations:1.6.2'
     compileOnly 'org.springframework.boot:spring-boot-starter-validation'
     compileOnly 'org.openapitools:jackson-databind-nullable:0.2.1'
@@ -58,21 +47,35 @@ dependencies {
     // OpenAPI Ends
 
     // DB Starts
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.flywaydb:flyway-core'
-    runtimeOnly 'com.h2database:h2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    implementation 'com.h2database:h2'
+    runtimeOnly 'io.r2dbc:r2dbc-h2'
     // DB Ends
 
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Flyway: Start
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    // Flyway: End
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    // implementation 'org.springframework.boot:spring-boot-starter-web'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-    /*{exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' }*/
+    testImplementation 'io.projectreactor:reactor-test'
 
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
 
+configurations.all {
+    resolutionStrategy.dependencySubstitution.all { dependency ->
+        if (dependency.requested instanceof ModuleComponentSelector && dependency.requested.module == 'spring-boot-starter-reactor-netty') {
+            dependency.useTarget("org.springframework.boot:spring-boot-starter-tomcat:$dependency.requested.version", 'Use Undertow instead of Reactor Netty')
+        }
+    }
+}
+
 test {
-    jvmArgs '--enable-preview'
     useJUnitPlatform()
 }

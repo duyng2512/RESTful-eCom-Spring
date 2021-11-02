@@ -8,6 +8,7 @@
   "serializableModel": true,
   "useTags": true,
   "useGzipFeature" : true,
+  "reactive": true,
   "hateoas": true,
   "withXml": true,
   "importMappings": {
