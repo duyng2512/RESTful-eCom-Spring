@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.opw.modern.api.model.Tag;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -45,7 +46,7 @@ public class Product extends RepresentationModel<Product>  implements Serializab
 
   @JsonProperty("price")
   @JacksonXmlProperty(localName = "price")
-  private Float price;
+  private BigDecimal price = null;
 
   @JsonProperty("count")
   @JacksonXmlProperty(localName = "count")
@@ -136,7 +137,7 @@ public class Product extends RepresentationModel<Product>  implements Serializab
     this.imageUrl = imageUrl;
   }
 
-  public Product price(Float price) {
+  public Product price(BigDecimal price) {
     this.price = price;
     return this;
   }
@@ -147,12 +148,13 @@ public class Product extends RepresentationModel<Product>  implements Serializab
   */
   @ApiModelProperty(value = "Product price")
 
+  @Valid
 
-  public Float getPrice() {
+  public BigDecimal getPrice() {
     return price;
   }
 
-  public void setPrice(Float price) {
+  public void setPrice(BigDecimal price) {
     this.price = price;
   }
 

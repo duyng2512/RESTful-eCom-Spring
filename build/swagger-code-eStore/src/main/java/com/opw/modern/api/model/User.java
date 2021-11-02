@@ -55,6 +55,14 @@ public class User extends RepresentationModel<User>  implements Serializable {
   @JacksonXmlProperty(localName = "userStatus")
   private String userStatus;
 
+  @JsonProperty("addressId")
+  @JacksonXmlProperty(localName = "addressId")
+  private String addressId;
+
+  @JsonProperty("cardId")
+  @JacksonXmlProperty(localName = "cardId")
+  private String cardId;
+
   public User id(String id) {
     this.id = id;
     return this;
@@ -215,6 +223,46 @@ public class User extends RepresentationModel<User>  implements Serializable {
     this.userStatus = userStatus;
   }
 
+  public User addressId(String addressId) {
+    this.addressId = addressId;
+    return this;
+  }
+
+  /**
+   * Get addressId
+   * @return addressId
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getAddressId() {
+    return addressId;
+  }
+
+  public void setAddressId(String addressId) {
+    this.addressId = addressId;
+  }
+
+  public User cardId(String cardId) {
+    this.cardId = cardId;
+    return this;
+  }
+
+  /**
+   * Get cardId
+   * @return cardId
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getCardId() {
+    return cardId;
+  }
+
+  public void setCardId(String cardId) {
+    this.cardId = cardId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -232,12 +280,14 @@ public class User extends RepresentationModel<User>  implements Serializable {
         Objects.equals(this.email, user.email) &&
         Objects.equals(this.password, user.password) &&
         Objects.equals(this.phone, user.phone) &&
-        Objects.equals(this.userStatus, user.userStatus);
+        Objects.equals(this.userStatus, user.userStatus) &&
+        Objects.equals(this.addressId, user.addressId) &&
+        Objects.equals(this.cardId, user.cardId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, firstName, lastName, email, password, phone, userStatus);
+    return Objects.hash(id, username, firstName, lastName, email, password, phone, userStatus, addressId, cardId);
   }
 
   @Override
@@ -253,6 +303,8 @@ public class User extends RepresentationModel<User>  implements Serializable {
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    userStatus: ").append(toIndentedString(userStatus)).append("\n");
+    sb.append("    addressId: ").append(toIndentedString(addressId)).append("\n");
+    sb.append("    cardId: ").append(toIndentedString(cardId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -70,6 +70,11 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: '2.5.6'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'com.auth0:java-jwt:3.12.0'
 }
 
 test {

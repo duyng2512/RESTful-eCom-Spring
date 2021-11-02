@@ -1,68 +1,81 @@
-com/modern/api/service/impl/OrderItemServiceImpl.java
- com.modern.api.service.impl.OrderItemServiceImpl
+com/modern/api/entity/UserTokenEntity.java
+ com.modern.api.entity.UserTokenEntity
+com/modern/api/controller/PaymentController.java
+ com.modern.api.controller.PaymentController
 com/modern/api/repository/CartRepository.java
  com.modern.api.repository.CartRepository
 com/modern/api/repository/AuthorizationRepository.java
  com.modern.api.repository.AuthorizationRepository
 com/modern/api/eCommerceApp.java
  com.modern.api.eCommerceApp
-com/opw/modern/api/model/Address.java
- com.opw.modern.api.model.Address
+com/modern/api/entity/PaymentEntity.java
+ com.modern.api.entity.PaymentEntity
+ com.modern.api.entity.PaymentEntity$PaymentEntityBuilder
+com/modern/api/AppConfig.java
+ com.modern.api.AppConfig
+com/modern/api/security/JwtManager.java
+ com.modern.api.security.JwtManager
 com/opw/modern/api/CartApi.java
  com.opw.modern.api.CartApi
 com/opw/modern/api/AddressApi.java
  com.opw.modern.api.AddressApi
-com/modern/api/repository/CardRepository.java
- com.modern.api.repository.CardRepository
+com/modern/api/entity/TagEntity.java
+ com.modern.api.entity.TagEntity
+ com.modern.api.entity.TagEntity$TagEntityBuilder
+com/modern/api/service/inf/ItemService.java
+ com.modern.api.service.inf.ItemService
+com/modern/api/hateoas/OrderRepresentationModelAssembler.java
+ com.modern.api.hateoas.OrderRepresentationModelAssembler
 com/modern/api/exception/ApiExceptionAdvisor.java
  com.modern.api.exception.ApiExceptionAdvisor
-com/modern/api/entity/ShipmentEntity.java
- com.modern.api.entity.ShipmentEntity
- com.modern.api.entity.ShipmentEntity$ShipmentEntityBuilder
-com/modern/api/exception/common/ResourceNotFoundException.java
- com.modern.api.exception.common.ResourceNotFoundException
-com/opw/modern/api/PaymentApi.java
- com.opw.modern.api.PaymentApi
+com/modern/api/controller/CardController.java
+ com.modern.api.controller.CardController
 com/modern/api/service/inf/PaymentService.java
  com.modern.api.service.inf.PaymentService
 com/opw/modern/api/model/AddAddressReq.java
  com.opw.modern.api.model.AddAddressReq
-com/modern/api/controller/ShipmentController.java
- com.modern.api.controller.ShipmentController
+com/modern/api/hateoas/PaymentRepresentationModelAssembler.java
+ com.modern.api.hateoas.PaymentRepresentationModelAssembler
 com/modern/api/repository/OrderRepositoryExt.java
  com.modern.api.repository.OrderRepositoryExt
 com/modern/api/exception/ErrorCode.java
  com.modern.api.exception.ErrorCode
-com/modern/api/service/impl/AuthorizationServiceImpl.java
- com.modern.api.service.impl.AuthorizationServiceImpl
-com/opw/modern/api/model/NewOrder.java
- com.opw.modern.api.model.NewOrder
-com/modern/api/repository/TagRepository.java
- com.modern.api.repository.TagRepository
-com/opw/modern/api/ApiUtil.java
- com.opw.modern.api.ApiUtil
-com/modern/api/exception/Error.java
- com.modern.api.exception.Error
- com.modern.api.exception.Error$ErrorBuilder
-com/opw/modern/api/OrderApi.java
- com.opw.modern.api.OrderApi
-com/modern/api/service/impl/PaymentServiceImpl.java
- com.modern.api.service.impl.PaymentServiceImpl
-com/modern/api/hateoas/PaymentRepresentationModelAssembler.java
- com.modern.api.hateoas.PaymentRepresentationModelAssembler
-com/opw/modern/api/model/ShippingReq.java
- com.opw.modern.api.model.ShippingReq
 com/modern/api/entity/CartEntity.java
  com.modern.api.entity.CartEntity
  com.modern.api.entity.CartEntity$CartEntityBuilder
-com/opw/modern/api/ShipmentApi.java
- com.opw.modern.api.ShipmentApi
-com/modern/api/hateoas/UserRepresentationModelAssembler.java
- com.modern.api.hateoas.UserRepresentationModelAssembler
-com/modern/api/controller/CartsController.java
- com.modern.api.controller.CartsController
-com/modern/api/hateoas/OrderRepresentationModelAssembler.java
- com.modern.api.hateoas.OrderRepresentationModelAssembler
+com/modern/api/service/impl/CartServiceImpl.java
+ com.modern.api.service.impl.CartServiceImpl
+com/modern/api/repository/TagRepository.java
+ com.modern.api.repository.TagRepository
+com/modern/api/service/impl/PaymentServiceImpl.java
+ com.modern.api.service.impl.PaymentServiceImpl
+com/modern/api/controller/CustomerController.java
+ com.modern.api.controller.CustomerController
+com/opw/modern/api/model/SignedInUser.java
+ com.opw.modern.api.model.SignedInUser
+com/modern/api/repository/PaymentRepository.java
+ com.modern.api.repository.PaymentRepository
+com/opw/modern/api/OrderApi.java
+ com.opw.modern.api.OrderApi
+com/modern/api/aspect/LoggingAspect.java
+ com.modern.api.aspect.LoggingAspect
+com/modern/api/service/impl/ItemServiceImpl.java
+ com.modern.api.service.impl.ItemServiceImpl
+com/modern/api/service/impl/CardServiceImpl.java
+ com.modern.api.service.impl.CardServiceImpl
+com/modern/api/hateoas/ProductRepresentationModelAssembler.java
+ com.modern.api.hateoas.ProductRepresentationModelAssembler
+com/modern/api/entity/ItemEntity.java
+ com.modern.api.entity.ItemEntity
+ com.modern.api.entity.ItemEntity$ItemEntityBuilder
+com/modern/api/controller/OrderController.java
+ com.modern.api.controller.OrderController
+com/modern/api/service/impl/UserServiceImpl.java
+ com.modern.api.service.impl.UserServiceImpl
+com/opw/modern/api/model/RefreshToken.java
+ com.opw.modern.api.model.RefreshToken
+com/modern/api/service/impl/ShipmentServiceImpl.java
+ com.modern.api.service.impl.ShipmentServiceImpl
 com/opw/modern/api/model/Payment.java
  com.opw.modern.api.model.Payment
 com/opw/modern/api/CustomerApi.java
@@ -72,29 +85,30 @@ com/modern/api/entity/AddressEntity.java
  com.modern.api.entity.AddressEntity$AddressEntityBuilder
 com/modern/api/repository/OrderRepository.java
  com.modern.api.repository.OrderRepository
-com/opw/modern/api/model/Cart.java
- com.opw.modern.api.model.Cart
+com/modern/api/hateoas/CardRepresentationModelAssembler.java
+ com.modern.api.hateoas.CardRepresentationModelAssembler
 com/opw/modern/api/model/PaymentReq.java
  com.opw.modern.api.model.PaymentReq
 com/modern/api/service/inf/AddressService.java
  com.modern.api.service.inf.AddressService
-com/modern/api/entity/OrderItemEntity.java
- com.modern.api.entity.OrderItemEntity
- com.modern.api.entity.OrderItemEntity$OrderItemEntityBuilder
+com/modern/api/controller/ShipmentController.java
+ com.modern.api.controller.ShipmentController
 com/modern/api/repository/ShipmentRepository.java
  com.modern.api.repository.ShipmentRepository
 com/modern/api/service/impl/TagServiceImpl.java
  com.modern.api.service.impl.TagServiceImpl
 com/opw/modern/api/ShippingApi.java
  com.opw.modern.api.ShippingApi
-com/modern/api/service/inf/ShipmentService.java
- com.modern.api.service.inf.ShipmentService
+com/modern/api/hateoas/CartRepresentationModelAssembler.java
+ com.modern.api.hateoas.CartRepresentationModelAssembler
 com/modern/api/repository/OrderItemRepository.java
  com.modern.api.repository.OrderItemRepository
+com/modern/api/security/Constants.java
+ com.modern.api.security.Constants
 com/opw/modern/api/model/AddAddressReqAllOf.java
  com.opw.modern.api.model.AddAddressReqAllOf
-com/opw/modern/api/CardApi.java
- com.opw.modern.api.CardApi
+com/modern/api/controller/ProductController.java
+ com.modern.api.controller.ProductController
 com/opw/modern/api/model/Product.java
  com.opw.modern.api.model.Product
 com/opw/modern/api/model/Card.java
@@ -107,12 +121,14 @@ com/opw/modern/api/ProductApi.java
  com.opw.modern.api.ProductApi
 com/opw/modern/api/model/User.java
  com.opw.modern.api.model.User
-com/modern/api/repository/PaymentRepository.java
- com.modern.api.repository.PaymentRepository
+com/modern/api/controller/CartsController.java
+ com.modern.api.controller.CartsController
 com/modern/api/service/inf/CardService.java
  com.modern.api.service.inf.CardService
 com/modern/api/exception/common/CustomerNotFoundException.java
  com.modern.api.exception.common.CustomerNotFoundException
+com/modern/api/security/KeyStoreConfig.java
+ com.modern.api.security.KeyStoreConfig
 com/modern/api/exception/common/ItemNotFoundException.java
  com.modern.api.exception.common.ItemNotFoundException
 com/modern/api/service/inf/OrderService.java
@@ -131,8 +147,8 @@ com/modern/api/service/inf/ProductService.java
  com.modern.api.service.inf.ProductService
 com/modern/api/entity/base/BaseEntity.java
  com.modern.api.entity.base.BaseEntity
-com/modern/api/aspect/LoggingAspect.java
- com.modern.api.aspect.LoggingAspect
+com/modern/api/service/inf/ShipmentService.java
+ com.modern.api.service.inf.ShipmentService
 com/opw/modern/api/model/Item.java
  com.opw.modern.api.model.Item
 com/modern/api/service/impl/AddressServiceImpl.java
@@ -141,84 +157,92 @@ com/modern/api/repository/ProductRepository.java
  com.modern.api.repository.ProductRepository
 com/modern/api/repository/UserRepository.java
  com.modern.api.repository.UserRepository
-com/modern/api/service/inf/UserService.java
- com.modern.api.service.inf.UserService
-com/modern/api/service/inf/OrderItemService.java
- com.modern.api.service.inf.OrderItemService
-com/modern/api/service/inf/TagService.java
- com.modern.api.service.inf.TagService
-com/modern/api/service/impl/ProductServiceImpl.java
- com.modern.api.service.impl.ProductServiceImpl
-com/opw/modern/api/model/CustomerInfoOnCard.java
- com.opw.modern.api.model.CustomerInfoOnCard
-com/opw/modern/api/model/Order.java
- com.opw.modern.api.model.Order
- com.opw.modern.api.model.Order$StatusEnum
-com/modern/api/exception/common/GenericAlreadyExistsException.java
- com.modern.api.exception.common.GenericAlreadyExistsException
-com/modern/api/repository/AddressRepository.java
- com.modern.api.repository.AddressRepository
-com/opw/modern/api/model/Authorization.java
- com.opw.modern.api.model.Authorization
-com/modern/api/controller/PaymentController.java
- com.modern.api.controller.PaymentController
-com/modern/api/service/impl/ShipmentServiceImpl.java
- com.modern.api.service.impl.ShipmentServiceImpl
-com/modern/api/service/impl/CardServiceImpl.java
- com.modern.api.service.impl.CardServiceImpl
-com/modern/api/entity/OrderEntity.java
- com.modern.api.entity.OrderEntity
- com.modern.api.entity.OrderEntity$OrderEntityBuilder
-com/modern/api/entity/PaymentEntity.java
- com.modern.api.entity.PaymentEntity
- com.modern.api.entity.PaymentEntity$PaymentEntityBuilder
-com/modern/api/entity/UserEntity.java
- com.modern.api.entity.UserEntity
- com.modern.api.entity.UserEntity$UserEntityBuilder
-com/modern/api/service/impl/UserServiceImpl.java
- com.modern.api.service.impl.UserServiceImpl
-com/modern/api/entity/TagEntity.java
- com.modern.api.entity.TagEntity
- com.modern.api.entity.TagEntity$TagEntityBuilder
-com/modern/api/entity/ProductEntity.java
- com.modern.api.entity.ProductEntity
- com.modern.api.entity.ProductEntity$ProductEntityBuilder
-com/modern/api/hateoas/CardRepresentationModelAssembler.java
- com.modern.api.hateoas.CardRepresentationModelAssembler
-com/modern/api/controller/CardController.java
- com.modern.api.controller.CardController
 com/modern/api/service/inf/CartService.java
  com.modern.api.service.inf.CartService
 com/modern/api/entity/AuthorizationEntity.java
  com.modern.api.entity.AuthorizationEntity
  com.modern.api.entity.AuthorizationEntity$AuthorizationEntityBuilder
-com/modern/api/controller/CustomerController.java
- com.modern.api.controller.CustomerController
+com/modern/api/service/inf/TagService.java
+ com.modern.api.service.inf.TagService
+com/modern/api/service/impl/ProductServiceImpl.java
+ com.modern.api.service.impl.ProductServiceImpl
 com/modern/api/entity/CardEntity.java
  com.modern.api.entity.CardEntity
  com.modern.api.entity.CardEntity$CardEntityBuilder
-com/modern/api/service/impl/CartServiceImpl.java
- com.modern.api.service.impl.CartServiceImpl
-com/modern/api/service/impl/ItemServiceImpl.java
- com.modern.api.service.impl.ItemServiceImpl
-com/modern/api/repository/OrderRepositoryImpl.java
- com.modern.api.repository.OrderRepositoryImpl
-com/modern/api/hateoas/CartRepresentationModelAssembler.java
- com.modern.api.hateoas.CartRepresentationModelAssembler
-com/modern/api/hateoas/ProductRepresentationModelAssembler.java
- com.modern.api.hateoas.ProductRepresentationModelAssembler
-com/modern/api/controller/ProductController.java
- com.modern.api.controller.ProductController
-com/modern/api/entity/ItemEntity.java
- com.modern.api.entity.ItemEntity
- com.modern.api.entity.ItemEntity$ItemEntityBuilder
-com/modern/api/service/inf/ItemService.java
- com.modern.api.service.inf.ItemService
-com/modern/api/service/impl/OrderServiceImpl.java
- com.modern.api.service.impl.OrderServiceImpl
+com/opw/modern/api/model/SignInReq.java
+ com.opw.modern.api.model.SignInReq
+com/modern/api/entity/OrderEntity.java
+ com.modern.api.entity.OrderEntity
+ com.modern.api.entity.OrderEntity$OrderEntityBuilder
+com/opw/modern/api/UserApi.java
+ com.opw.modern.api.UserApi
+com/modern/api/exception/common/GenericAlreadyExistsException.java
+ com.modern.api.exception.common.GenericAlreadyExistsException
+com/modern/api/entity/UserEntity.java
+ com.modern.api.entity.UserEntity
+ com.modern.api.entity.UserEntity$UserEntityBuilder
+com/opw/modern/api/model/Authorization.java
+ com.opw.modern.api.model.Authorization
+com/modern/api/service/impl/OrderItemServiceImpl.java
+ com.modern.api.service.impl.OrderItemServiceImpl
+com/opw/modern/api/model/Cart.java
+ com.opw.modern.api.model.Cart
+com/modern/api/entity/ProductEntity.java
+ com.modern.api.entity.ProductEntity
+ com.modern.api.entity.ProductEntity$ProductEntityBuilder
+com/modern/api/hateoas/UserRepresentationModelAssembler.java
+ com.modern.api.hateoas.UserRepresentationModelAssembler
 com/modern/api/hateoas/ShipmentRepresentationModelAssembler.java
  com.modern.api.hateoas.ShipmentRepresentationModelAssembler
-com/modern/api/controller/OrderController.java
- com.modern.api.controller.OrderController
-com/modern/api/AppConfig.java
- com.modern.api.AppConfig
+com/opw/modern/api/model/NewOrder.java
+ com.opw.modern.api.model.NewOrder
+com/modern/api/service/impl/AuthorizationServiceImpl.java
+ com.modern.api.service.impl.AuthorizationServiceImpl
+com/modern/api/controller/AuthController.java
+ com.modern.api.controller.AuthController
+com/opw/modern/api/ShipmentApi.java
+ com.opw.modern.api.ShipmentApi
+com/modern/api/repository/AddressRepository.java
+ com.modern.api.repository.AddressRepository
+com/modern/api/repository/CardRepository.java
+ com.modern.api.repository.CardRepository
+com/opw/modern/api/model/Address.java
+ com.opw.modern.api.model.Address
+com/opw/modern/api/model/Order.java
+ com.opw.modern.api.model.Order
+ com.opw.modern.api.model.Order$StatusEnum
+com/opw/modern/api/model/CustomerInfoOnCard.java
+ com.opw.modern.api.model.CustomerInfoOnCard
+com/modern/api/repository/OrderRepositoryImpl.java
+ com.modern.api.repository.OrderRepositoryImpl
+com/modern/api/service/inf/OrderItemService.java
+ com.modern.api.service.inf.OrderItemService
+com/modern/api/service/inf/UserService.java
+ com.modern.api.service.inf.UserService
+com/opw/modern/api/PaymentApi.java
+ com.opw.modern.api.PaymentApi
+com/opw/modern/api/ApiUtil.java
+ com.opw.modern.api.ApiUtil
+com/modern/api/entity/OrderItemEntity.java
+ com.modern.api.entity.OrderItemEntity
+ com.modern.api.entity.OrderItemEntity$OrderItemEntityBuilder
+com/modern/api/exception/common/ResourceNotFoundException.java
+ com.modern.api.exception.common.ResourceNotFoundException
+com/modern/api/entity/ShipmentEntity.java
+ com.modern.api.entity.ShipmentEntity
+ com.modern.api.entity.ShipmentEntity$ShipmentEntityBuilder
+com/modern/api/service/impl/OrderServiceImpl.java
+ com.modern.api.service.impl.OrderServiceImpl
+com/modern/api/exception/Error.java
+ com.modern.api.exception.Error
+ com.modern.api.exception.Error$ErrorBuilder
+com/opw/modern/api/CardApi.java
+ com.opw.modern.api.CardApi
+com/opw/modern/api/model/ShippingReq.java
+ com.opw.modern.api.model.ShippingReq
+com/modern/api/security/filter/LoginFilter.java
+ com.modern.api.security.filter.LoginFilter
+com/modern/api/security/filter/JwtAuthenticationFilter.java
+ com.modern.api.security.filter.JwtAuthenticationFilter
+com/modern/api/security/SecurityConfig.java
+ com.modern.api.security.SecurityConfig

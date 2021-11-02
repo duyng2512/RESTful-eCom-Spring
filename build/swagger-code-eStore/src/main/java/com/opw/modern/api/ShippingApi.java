@@ -42,11 +42,11 @@ public interface ShippingApi {
      * Ship the specified shipping request
      *
      * @param shippingReq  (optional)
-     * @return For successful fetch. (status code 200)
+     * @return For successful fetch. (status code 201)
      */
     @ApiOperation(value = "Ship the specified shipping request", nickname = "shipOrder", notes = "Ship the specified shipping request", response = Authorization.class, tags={ "shipping", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "For successful fetch.", response = Authorization.class) })
+        @ApiResponse(code = 201, message = "For successful fetch.", response = Authorization.class) })
     @RequestMapping(value = "/api/v1/shipping",
         produces = { "application/xml", "application/json" }, 
         consumes = { "application/xml", "application/json" },

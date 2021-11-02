@@ -13,6 +13,6 @@ public class BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "ID", updatable = false, nullable = false)
-    private UUID id;
+    protected UUID id;
 
 }

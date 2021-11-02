@@ -3,10 +3,7 @@ package com.modern.api.aspect;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.logging.Logger;
@@ -15,6 +12,9 @@ import java.util.logging.Logger;
 @Component
 @Slf4j
 public class LoggingAspect {
+
+    @Pointcut("within(com.modern.api.security.filter..*)")
+    private void logSecurityFilter() {};
 
     @Pointcut("execution(* com.modern.api.exception.ApiExceptionAdvisor.*(..))")
     private void logAfterException() {};
@@ -25,6 +25,16 @@ public class LoggingAspect {
         Object result = joinPoint.proceed(args);
         log.warn("Handle Logging {}", result.toString());
         return result;
+    }
+
+    @After("logSecurityFilter()")
+    public void afterFilter(JoinPoint joinPoint) {
+        log.warn("After Filter Logging {}", joinPoint.getSignature());
+    }
+
+    @Before("logSecurityFilter()")
+    public void beforeFilter(JoinPoint joinPoint) {
+        log.warn("Before Filter Logging {}", joinPoint.getSignature());
     }
 
 }

@@ -61,7 +61,7 @@ public class CartServiceImpl implements CartService {
             if (eachItem.getProduct()
                         .getId()
                         .equals(UUID.fromString(item.getId()))) {
-                eachItem.setPrice(BigDecimal.valueOf(item.getUnitPrice()));
+                eachItem.setPrice(item.getUnitPrice());
                 eachItem.setQuantity(BigDecimal.valueOf(item.getQuantity()));
                 isExist.set(true);
             }

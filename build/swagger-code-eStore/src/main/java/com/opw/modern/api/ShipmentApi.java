@@ -37,7 +37,7 @@ public interface ShipmentApi {
     }
 
     /**
-     * GET /api/v1/shipping/{id} : Return the Shipment
+     * GET /api/v1/shipping : Return the Shipment
      * Return the Shipment for the specified order
      *
      * @param id Order Identifier (required)
@@ -46,7 +46,7 @@ public interface ShipmentApi {
     @ApiOperation(value = "Return the Shipment", nickname = "getShipmentByOrderId", notes = "Return the Shipment for the specified order", response = Shipment.class, responseContainer = "List", tags={ "shipment", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "For successful fetch.", response = Shipment.class, responseContainer = "List") })
-    @RequestMapping(value = "/api/v1/shipping/{id}",
+    @RequestMapping(value = "/api/v1/shipping",
         produces = { "application/xml", "application/json" }, 
         method = RequestMethod.GET)
     default ResponseEntity<List<Shipment>> getShipmentByOrderId(@ApiParam(value = "Order Identifier",required=true) @PathVariable("id") String id) {

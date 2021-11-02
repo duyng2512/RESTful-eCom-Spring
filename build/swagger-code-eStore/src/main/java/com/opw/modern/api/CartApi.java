@@ -58,12 +58,12 @@ public interface CartApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"unitPrice\" : 6.027456183070403, \"quantity\" : 0, \"id\" : \"id\" }";
+                    String exampleString = "{ \"unitPrice\" : \"\", \"quantity\" : 0, \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"description\" : \"description\", \"id\" : \"id\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/xml"))) {
-                    String exampleString = "<Item> <id>aeiou</id> <quantity>123</quantity> <unitPrice>3.149</unitPrice> </Item>";
+                    String exampleString = "<Item> <id>aeiou</id> <name>aeiou</name> <description>aeiou</description> <imageUrl>aeiou</imageUrl> <quantity>123</quantity> <unitPrice>UNDEFINED_EXAMPLE_VALUE</unitPrice> </Item>";
                     ApiUtil.setExampleResponse(request, "application/xml", exampleString);
                     break;
                 }
@@ -95,12 +95,12 @@ public interface CartApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"unitPrice\" : 6.027456183070403, \"quantity\" : 0, \"id\" : \"id\" }";
+                    String exampleString = "{ \"unitPrice\" : \"\", \"quantity\" : 0, \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"description\" : \"description\", \"id\" : \"id\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/xml"))) {
-                    String exampleString = "<null> <id>aeiou</id> <quantity>123</quantity> <unitPrice>3.149</unitPrice> </null>";
+                    String exampleString = "<null> <id>aeiou</id> <name>aeiou</name> <description>aeiou</description> <imageUrl>aeiou</imageUrl> <quantity>123</quantity> <unitPrice>UNDEFINED_EXAMPLE_VALUE</unitPrice> </null>";
                     ApiUtil.setExampleResponse(request, "application/xml", exampleString);
                     break;
                 }
@@ -169,7 +169,7 @@ public interface CartApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"customerId\" : \"customerId\", \"id\" : \"id\", \"items\" : [ { \"unitPrice\" : 6.027456183070403, \"quantity\" : 0, \"id\" : \"id\" }, { \"unitPrice\" : 6.027456183070403, \"quantity\" : 0, \"id\" : \"id\" } ] }";
+                    String exampleString = "{ \"customerId\" : \"customerId\", \"id\" : \"id\", \"items\" : [ { \"unitPrice\" : \"\", \"quantity\" : 0, \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"description\" : \"description\", \"id\" : \"id\" }, { \"unitPrice\" : \"\", \"quantity\" : 0, \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"description\" : \"description\", \"id\" : \"id\" } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -204,12 +204,12 @@ public interface CartApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"unitPrice\" : 6.027456183070403, \"quantity\" : 0, \"id\" : \"id\" }";
+                    String exampleString = "{ \"unitPrice\" : \"\", \"quantity\" : 0, \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"description\" : \"description\", \"id\" : \"id\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/xml"))) {
-                    String exampleString = "<null> <id>aeiou</id> <quantity>123</quantity> <unitPrice>3.149</unitPrice> </null>";
+                    String exampleString = "<null> <id>aeiou</id> <name>aeiou</name> <description>aeiou</description> <imageUrl>aeiou</imageUrl> <quantity>123</quantity> <unitPrice>UNDEFINED_EXAMPLE_VALUE</unitPrice> </null>";
                     ApiUtil.setExampleResponse(request, "application/xml", exampleString);
                     break;
                 }
@@ -240,12 +240,12 @@ public interface CartApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"unitPrice\" : 6.027456183070403, \"quantity\" : 0, \"id\" : \"id\" }";
+                    String exampleString = "{ \"unitPrice\" : \"\", \"quantity\" : 0, \"imageUrl\" : \"imageUrl\", \"name\" : \"name\", \"description\" : \"description\", \"id\" : \"id\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/xml"))) {
-                    String exampleString = "<Item> <id>aeiou</id> <quantity>123</quantity> <unitPrice>3.149</unitPrice> </Item>";
+                    String exampleString = "<Item> <id>aeiou</id> <name>aeiou</name> <description>aeiou</description> <imageUrl>aeiou</imageUrl> <quantity>123</quantity> <unitPrice>UNDEFINED_EXAMPLE_VALUE</unitPrice> </Item>";
                     ApiUtil.setExampleResponse(request, "application/xml", exampleString);
                     break;
                 }

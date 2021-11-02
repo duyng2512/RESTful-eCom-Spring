@@ -19,7 +19,7 @@ public class ItemServiceImpl implements ItemService {
     public ItemEntity toEntity(Item m) {
 
         ProductEntity productEntity = ProductEntity.builder()
-                                                   .price(BigDecimal.valueOf(m.getUnitPrice()))
+                                                   .price(m.getUnitPrice())
                                                    .count(m.getQuantity())
                                                    .build();
         productEntity.setId(UUID.fromString(m.getId()));
@@ -42,7 +42,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public Item toModel(ItemEntity e) {
         Item item = new Item();
-        item.setUnitPrice(e.getPrice().doubleValue());
+        item.setUnitPrice(e.getPrice());
         item.setQuantity(e.getQuantity().intValue());
         item.setId(e.getId().toString());
         return item;

@@ -105,12 +105,12 @@ public interface CustomerApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"firstName\" : \"firstName\", \"lastName\" : \"lastName\", \"password\" : \"password\", \"userStatus\" : \"userStatus\", \"phone\" : \"phone\", \"id\" : \"id\", \"email\" : \"email\", \"username\" : \"username\" }";
+                    String exampleString = "{ \"firstName\" : \"firstName\", \"lastName\" : \"lastName\", \"password\" : \"password\", \"userStatus\" : \"userStatus\", \"phone\" : \"phone\", \"cardId\" : \"cardId\", \"id\" : \"id\", \"email\" : \"email\", \"username\" : \"username\", \"addressId\" : \"addressId\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/xml"))) {
-                    String exampleString = "<User> <id>aeiou</id> <username>aeiou</username> <firstName>aeiou</firstName> <lastName>aeiou</lastName> <email>aeiou</email> <password>aeiou</password> <phone>aeiou</phone> <userStatus>aeiou</userStatus> </User>";
+                    String exampleString = "<User> <id>aeiou</id> <username>aeiou</username> <firstName>aeiou</firstName> <lastName>aeiou</lastName> <email>aeiou</email> <password>aeiou</password> <phone>aeiou</phone> <userStatus>aeiou</userStatus> <addressId>aeiou</addressId> <cardId>aeiou</cardId> </User>";
                     ApiUtil.setExampleResponse(request, "application/xml", exampleString);
                     break;
                 }
@@ -171,12 +171,12 @@ public interface CustomerApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"firstName\" : \"firstName\", \"lastName\" : \"lastName\", \"password\" : \"password\", \"userStatus\" : \"userStatus\", \"phone\" : \"phone\", \"id\" : \"id\", \"email\" : \"email\", \"username\" : \"username\" }";
+                    String exampleString = "{ \"firstName\" : \"firstName\", \"lastName\" : \"lastName\", \"password\" : \"password\", \"userStatus\" : \"userStatus\", \"phone\" : \"phone\", \"cardId\" : \"cardId\", \"id\" : \"id\", \"email\" : \"email\", \"username\" : \"username\", \"addressId\" : \"addressId\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/xml"))) {
-                    String exampleString = "<User> <id>aeiou</id> <username>aeiou</username> <firstName>aeiou</firstName> <lastName>aeiou</lastName> <email>aeiou</email> <password>aeiou</password> <phone>aeiou</phone> <userStatus>aeiou</userStatus> </User>";
+                    String exampleString = "<User> <id>aeiou</id> <username>aeiou</username> <firstName>aeiou</firstName> <lastName>aeiou</lastName> <email>aeiou</email> <password>aeiou</password> <phone>aeiou</phone> <userStatus>aeiou</userStatus> <addressId>aeiou</addressId> <cardId>aeiou</cardId> </User>";
                     ApiUtil.setExampleResponse(request, "application/xml", exampleString);
                     break;
                 }
