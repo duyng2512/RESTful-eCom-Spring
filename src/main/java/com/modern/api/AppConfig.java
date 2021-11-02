@@ -3,8 +3,12 @@ package com.modern.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.modern.api.repository.UserRepository;
+import com.modern.api.security.user.EcomUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.*;
 import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
@@ -15,6 +19,14 @@ import java.util.Map;
 
 @Configuration
 public class AppConfig {
+
+    private UserRepository repository;
+
+    @Autowired
+    public void setRepository(UserRepository repository){
+        this.repository = repository;
+    }
+
     @Bean
     public ShallowEtagHeaderFilter shallowEtagHeaderFilter() {
         return new ShallowEtagHeaderFilter();
@@ -41,4 +53,8 @@ public class AppConfig {
         return objectMapper;
     }
 
+    @Bean
+    public UserDetailsService getUserDetails(){
+        return new EcomUserService(this.repository);
+    }
 }

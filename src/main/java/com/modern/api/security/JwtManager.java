@@ -2,8 +2,11 @@ package com.modern.api.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.stereotype.Component;
 
 import java.security.interfaces.RSAPrivateKey;
@@ -45,4 +48,10 @@ public class JwtManager {
                     .sign(Algorithm.RSA256(publicKey, privateKey));
 
     }
+
+    @Bean
+    public JwtDecoder jwtDecoder(RSAPublicKey rsaPublicKey) {
+        return NimbusJwtDecoder.withPublicKey(rsaPublicKey).build();
+    }
+
 }

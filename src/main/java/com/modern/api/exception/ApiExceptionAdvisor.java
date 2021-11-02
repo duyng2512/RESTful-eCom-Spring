@@ -1,10 +1,7 @@
 package com.modern.api.exception;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.modern.api.exception.common.CustomerNotFoundException;
-import com.modern.api.exception.common.GenericAlreadyExistsException;
-import com.modern.api.exception.common.ItemNotFoundException;
-import com.modern.api.exception.common.ResourceNotFoundException;
+import com.modern.api.exception.common.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -12,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
@@ -196,6 +194,34 @@ public class ApiExceptionAdvisor {
                            .reqMethod(request.getMethod())
                            .build();
         return new ResponseEntity<>(error, HttpStatus.NOT_ACCEPTABLE);
+    }
+
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public ResponseEntity<Error> handleUsernameNotfoundException(HttpServletRequest request,
+                                                                 GenericAlreadyExistsException ex,
+                                                                 Locale locale) {
+        Error error = Error.builder()
+                           .errorCode(ErrorCode.USERNAME_NOT_FOUND.getErrCode())
+                           .message(String.format("%s %s",ErrorCode.USERNAME_NOT_FOUND.getErrMsgKey(), ex.getMessage()))
+                           .status(HttpStatus.NOT_FOUND.value())
+                           .url(request.getRequestURL().toString())
+                           .reqMethod(request.getMethod())
+                           .build();
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(InvalidRefreshTokenException.class)
+    public ResponseEntity<Error> handleInvalidRefreshTokenException(HttpServletRequest request,
+                                                                 GenericAlreadyExistsException ex,
+                                                                 Locale locale) {
+        Error error = Error.builder()
+                           .errorCode(ErrorCode.RESOURCE_NOT_FOUND.getErrCode())
+                           .message(String.format("%s %s",ErrorCode.RESOURCE_NOT_FOUND.getErrMsgKey(), ex.getMessage()))
+                           .status(HttpStatus.NOT_FOUND.value())
+                           .url(request.getRequestURL().toString())
+                           .reqMethod(request.getMethod())
+                           .build();
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
 }

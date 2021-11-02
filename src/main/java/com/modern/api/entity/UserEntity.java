@@ -42,6 +42,10 @@ public class UserEntity extends BaseEntity {
     @Column(name = "USER_STATUS")
     private String userStatus;
 
+    @Column(name = "ROLE")
+    @Enumerated(EnumType.STRING)
+    private RoleEnum role = RoleEnum.USER;
+
     @OneToMany
     @JoinTable(name = "USER_ADDRESS",
             joinColumns = @JoinColumn(name = "USER_ID"),
