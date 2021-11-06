@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "app.security.jwt.keystore-location",
+      "type": "java.lang.String",
+      "description": "Description for app.security.jwt.keystore-location."
+    },
+    {
+      "name": "app.security.jwt.keystore-password",
+      "type": "java.lang.String",
+      "description": "Description for app.security.jwt.keystore-password."
+    }
+  ] }
